@@ -10,7 +10,7 @@ import store from '../store';
 
 @Component
 export default class CharacterList extends Vue {
-    private get characters() { return store.state.characters; }
+    private get characters() { return store.getters.characters; }
 }
 </script>
 

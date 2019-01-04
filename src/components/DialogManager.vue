@@ -17,7 +17,7 @@ export default class DialogManager extends Vue {
     private dialog = '';
 
     private addChar() { store.dispatch('addChar', this.character); }
-    private addDialog() { store.dispatch('addDialog', this.character); }
+    private addDialog() { store.dispatch('addDialog', this.dialog); }
 }
 </script>
 
