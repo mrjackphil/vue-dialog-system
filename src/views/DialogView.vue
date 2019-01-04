@@ -3,11 +3,15 @@
     <div class="top">
       <dialog-manager></dialog-manager>
     </div>
-    <div class="left">
-      <character-list></character-list>
-    </div>
-    <div class="right">
-      <dialog-list></dialog-list>
+    <div class="manager">
+      <div class="left">
+        <character-list></character-list>
+      </div>
+      <div class="center">
+        <dialog-list></dialog-list>
+      </div>
+      <div class="right">
+      </div>
     </div>
   </div>
 </template>
@@ -25,16 +29,14 @@ export default class DialogView extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-.left {
+.manager {
   position: fixed;
   overflow: hidden;
-  width: 50%;
+  display: flex;
 }
 
 .right {
-  position: fixed;
-  overflow: hidden;
-  right: 0;
-  width: 50%;
+  flex: 1;
 }
+
 </style>

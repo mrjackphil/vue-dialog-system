@@ -1,8 +1,8 @@
 <template>
     <div class="dialog">
-        <input name="add-char" type="text" v-model="character">
+        <input name="add-char" @keypress.enter="addChar" type="text" v-model="character">
         <button name="add-char" @click="addChar">Add Character</button>
-        <input name="add-dialog" type="text" v-model="dialog">
+        <input name="add-dialog" @keypress.enter="addDialog" type="text" v-model="dialog">
         <button name="add-dialog" @click="addDialog">Add Dialog</button>
     </div>
 </template>
