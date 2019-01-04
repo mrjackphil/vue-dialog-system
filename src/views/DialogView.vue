@@ -7,6 +7,7 @@
       <character-list></character-list>
     </div>
     <div class="right">
+      <dialog-list></dialog-list>
     </div>
   </div>
 </template>
@@ -14,10 +15,11 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import DialogManager from '@/components/DialogManager.vue';
+import DialogList from '@/components/DialogList.vue';
 import CharacterList from '@/components/CharacterList.vue';
 
 @Component({
-  components: { DialogManager, CharacterList },
+  components: { DialogManager, CharacterList, DialogList },
 })
 export default class DialogView extends Vue {}
 </script>
