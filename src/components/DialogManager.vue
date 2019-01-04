@@ -2,6 +2,8 @@
     <div class="dialog">
         <input name="add-char" type="text" v-model="character">
         <button name="add-char" @click="addChar">Add Character</button>
+        <input name="add-dialog" type="text" v-model="dialog">
+        <button name="add-dialog" @click="addDialog">Add Dialog</button>
     </div>
 </template>
 
@@ -12,22 +14,10 @@ import store from '../store';
 @Component
 export default class DialogManager extends Vue {
     private character = '';
+    private dialog = '';
 
-    private addChar() {
-        const ch = this.character as string;
-
-        if (ch.length && !charExist(store.state, ch)) { store.commit('addCharacter', ch); }
-
-        function charExist(state: { characters: Array<{}> }, name: string) {
-            return Object.keys(state.characters).includes(name);
-        }
-    }
-
+    private addChar() { store.dispatch('addChar', this.character); }
+    private addDialog() { store.dispatch('addDialog', this.character); }
 }
-
 </script>
-
-<style lang="scss" scoped>
-
-</style>
 
