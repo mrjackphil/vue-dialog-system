@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div class="top">
       <dialog-manager></dialog-manager>
     </div>
@@ -11,6 +11,7 @@
         <dialog-list></dialog-list>
       </div>
       <div class="right">
+        <dialog-viewer></dialog-viewer>
       </div>
     </div>
   </div>
@@ -19,24 +20,30 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import DialogManager from '@/components/DialogManager.vue';
+import DialogViewer from '@/components/DialogViewer.vue';
 import DialogList from '@/components/DialogList.vue';
 import CharacterList from '@/components/CharacterList.vue';
 
 @Component({
-  components: { DialogManager, CharacterList, DialogList },
+  components: { DialogManager, CharacterList, DialogList, DialogViewer },
 })
 export default class DialogView extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-.manager {
+.wrapper {
   position: fixed;
   overflow: hidden;
-  display: flex;
+  width: 100%;
+  height: 100%;
+  top: 2rem;
+  left: 0;
 }
 
-.right {
-  flex: 1;
+.manager {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
 }
 
 </style>

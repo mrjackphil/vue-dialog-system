@@ -19,4 +19,5 @@ export const arrMax = (arr: number[]) => {
     const m = Math.max.apply(Math, arr);
     return isFinite(m) ? m : 0; };
 
-export const arrsMax = (...arr: number[][] ) => arrMax( arr.map( (a) => arrMax(a) ) );
+export const arrsMax = (...arr: number[][] ) =>
+    arrMax( arr.map( (a) => arrMax(a) ) );
