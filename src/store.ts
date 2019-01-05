@@ -26,9 +26,14 @@ export default new Vuex.Store({
     newDialog(state, i: number) {
       state.dialogues.push({id: i}); },
 
-    setDialogName(state, options: {id: number, name: string}) {
-      const obj = fst (findById(state.dialogues, options.id));
-      if (obj) { obj.name = options.name; }
+    setDialogName(state, opt: {id: number, name: string}) {
+      const obj = findById(state.dialogues, opt.id);
+      if (obj) { obj.name = opt.name; }
+    },
+
+    setDialogContent(state, opt: {id: number, content: string}) {
+      const d = findById(state.dialogues, opt.id);
+      if (d) { d.content = opt.content; }
     },
   },
   actions: {

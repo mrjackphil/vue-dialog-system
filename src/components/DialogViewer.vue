@@ -1,6 +1,7 @@
 <template>
     <div class="viewer">
         {{dialogue.name}}
+        <input @keypress.enter="setContent" type="textarea" v-model="text">
     </div>
 </template>
 
@@ -11,9 +12,14 @@ import {fst, findById} from '../modules/arrays';
 
 @Component
 export default class DialogViewer extends Vue {
+    private text = '';
+
     private get dialogueID() { return store.state.activeDialog; }
     private get dialogue() {
-        return fst(findById(store.state.dialogues, this.dialogueID));
+        return findById(store.state.dialogues, this.dialogueID);
+    }
+    private setContent() {
+        store.commit('setDialogContent', {id: this.dialogue.id, content: this.text});
     }
 }
 </script>

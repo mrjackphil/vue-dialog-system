@@ -8,7 +8,7 @@ export const isNameInArray = (arr: Array<{}>, n: string) =>
     arr.filter( (e) => objName(e) === n ).length > 0;
 
 export const findById = (arr: WithID[], id: number) =>
-    arr.filter( (e) => e.id === id );
+    fst ( arr.filter( (e) => e.id === id ) );
 
 export const getIds = (arr: WithID[]) => arr.map( (e) => objId(e) );
 
