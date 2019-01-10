@@ -43,7 +43,7 @@ export default class DialogView extends Vue {}
 .manager {
   display: flex;
   padding: 1rem;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 </style>
